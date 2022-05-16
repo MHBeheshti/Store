@@ -8,7 +8,7 @@ namespace _03_DAL.Persistance.Interfaces
 {
     public interface IReadable <T>
     {
-        T ReadAll();
+        ICollection<T> ReadAll();
         T Find<IdType>(IdType Id);
     }
 }

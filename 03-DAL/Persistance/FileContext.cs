@@ -7,24 +7,30 @@ using System.Threading.Tasks;
 
 namespace _03_DAL.Persistance
 {
-    public class FileContext<T> : IReadable<T>, IWriteable<T>
+    public class FileContext<T> : IContex<T> where T : class
     {
-        T IReadable<T>.Find<IdType>(IdType Id)
+        private readonly string _rootpath { get; set; }
+        public FileContext(string RootPath)
+            {
+                _rootpath = Rootpath;
+            }
+        T IContex<T>.Create(T entity)
+        {
+            var classname = entity.GetType().Name;
+            return null;
+        }
+
+        T IContex<T>.Delete(T entity)
         {
             throw new NotImplementedException();
         }
 
-        ICollection<T> IReadable<T>.ReadAll()
+        ICollection<T> IContex<T>.GetAll()
         {
             throw new NotImplementedException();
         }
 
-        void IWriteable<T>.Write(T value)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IWriteable<T>.WriteJson(string Json)
+        T IContex<T>.Update(T entity)
         {
             throw new NotImplementedException();
         }

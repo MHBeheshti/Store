@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\Cpu\CpuDto.cs" />
+    <Compile Include="Dto\Cpu\CreateCpuDto.cs" />
+    <Compile Include="Dto\Cpu\UpdateCpuDto.cs" />
+    <Compile Include="IRepositories\ICpuRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CpuRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\03-DAL\03-DAL.csproj">
@@ -49,5 +54,6 @@
       <Name>03-DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

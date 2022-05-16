@@ -1,4 +1,5 @@
-﻿using _03_DAL.Enums;
+﻿using _03_DAL.Entity.Identity;
+using _03_DAL.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,9 @@ namespace _03_DAL.Entity.Common
 {
     public class Audit
     {
-        public string CreatedBy { get; set; }
-        public DateTime Registered { get; set; }
-        public string ModifiedBy { get; set; }
-        public DateTime LastModified { get; set; }
-        public bool IsDeleted { get; set; } = false;
+        public User CreatedBy { get; set; }
+        public DateTime Created { get; set; }
+        public User ModifiedBy { get; set; }
+        public DateTime Modify { get; set; }
     }
 }

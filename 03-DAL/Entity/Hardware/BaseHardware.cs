@@ -11,11 +11,14 @@ namespace _03_DAL.Entity.Hardware
 {
     public class BaseHardware : Audit
     {
+        public int Id { get; set; }
+        public string HardwareName { get; set; }
         public Brand Brand { get; set; }
         public decimal Price { get; set; }
-        public bool IsExist { get; set; }
-        public short Rate { get; set; }
-        public string[] Photos { get; set; }
+        public ICollection<HardwarePhoto> HardwarePhoto { get; set; }
+        public ushort Rate { get; set; }
+        public int Count { get; set; }
+        public Off Off { get; set; }
         public PostStatus Status { get; set; }
     }
 }

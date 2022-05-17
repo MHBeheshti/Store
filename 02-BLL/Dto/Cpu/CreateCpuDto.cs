@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _03_DAL.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,13 @@ namespace _02_BLL.Dto.Cpu
 {
     public class CreateCpuDto
     {
+        public int Id { get; set; }
+        public string HardwareName { get; set; }
+        public decimal Price { get; set; }
+        public ushort Rate { get; set; }
+        public int Count { get; set; }
+        public int CoreNumber { get; set; }
+        public MemoryType MemoryType { get; set; }
+        public string Series { get; set; }
     }
 }

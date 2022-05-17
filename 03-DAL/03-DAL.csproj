@@ -56,7 +56,7 @@
     <Compile Include="Enums\PostStatus.cs" />
     <Compile Include="Enums\MemoryType.cs" />
     <Compile Include="Persistance\FileContext.cs" />
-    <Compile Include="Persistance\Interfaces\IContex.cs" />
+    <Compile Include="Persistance\Interfaces\IContext.cs" />
     <Compile Include="Persistance\Interfaces\IReadable.cs" />
     <Compile Include="Persistance\Interfaces\IWriteable.cs" />
     <Compile Include="Persistance\IReadaable.cs" />

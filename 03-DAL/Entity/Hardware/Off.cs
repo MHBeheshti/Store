@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _03_DAL.Entity.Hardware
 {
-    internal class Off
+    public class Off
     {
     }
 }

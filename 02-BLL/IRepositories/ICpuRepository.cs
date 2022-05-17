@@ -1,16 +1,19 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _02_BLL.Dto.Cpu;
 using _03_DAL.Entity.Hardware;
 
 namespace _02_BLL.IRepositories
 {
     public interface ICpuRepository
     {
-        Cpu Create { get; set; }
-        Cpu Update { get; set; }
-        bool Delete { get; set; }
+        List<CpuDto> GetAll();
+        List<CpuDto> GetByCore(int corenumber);
+        CpuDto Create(CreateCpuDto Cpu);
+        CpuDto Update(CreateCpuDto Cpu); 
+        bool Delete(int Cpu);
     }
 }

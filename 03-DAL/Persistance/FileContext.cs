@@ -7,30 +7,39 @@ using System.Threading.Tasks;
 
 namespace _03_DAL.Persistance
 {
-    public class FileContext<T> : IContex<T> where T : class
+    public class FileContext<T> : IContext<T> where T : class
     {
-        private readonly string _rootpath { get; set; }
+        private string _rootpath { get; set; }
+        private ICollection<T> Context;
         public FileContext(string RootPath)
             {
-                _rootpath = Rootpath;
+            _rootpath = RootPath;
+            Context = new List<T>();
             }
-        T IContex<T>.Create(T entity)
+
+        void SaveChange()
+        {
+            var classname = typeof(T).Name;
+        }
+
+        T IContext<T>.Create(T entity)
         {
             var classname = entity.GetType().Name;
+            Context.Add(entity);
             return null;
         }
 
-        T IContex<T>.Delete(T entity)
+        T IContext<T>.Delete(T entity)
         {
             throw new NotImplementedException();
         }
 
-        ICollection<T> IContex<T>.GetAll()
+        ICollection<T> IContext<T>.GetAll()
         {
             throw new NotImplementedException();
         }
 
-        T IContex<T>.Update(T entity)
+        T IContext<T>.Update(T entity)
         {
             throw new NotImplementedException();
         }

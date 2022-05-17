@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Dto\Cpu\CpuDto.cs" />
     <Compile Include="Dto\Cpu\CreateCpuDto.cs" />
-    <Compile Include="Dto\Cpu\UpdateCpuDto.cs" />
     <Compile Include="IRepositories\ICpuRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CpuRepository.cs" />

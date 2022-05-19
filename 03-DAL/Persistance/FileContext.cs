@@ -11,65 +11,85 @@ namespace _03_DAL.Persistance
 {
     public class FileContext<T> : IContext<T> where T : class
     {
-        private string _rootpath { get; set; }
+        private readonly string _rootpath;
         private ICollection<T> Context;
         public FileContext(string RootPath)
-            {
+        {
             Context = new List<T>();
             _rootpath = Path.Combine(RootPath, "Entity");
             if (!Directory.Exists(_rootpath))
                 Directory.CreateDirectory(_rootpath);
-            }
-
+        }
         void IContext<T>.SaveChange()
         {
-            var classname = typeof(T).Name + ".json"; // Cpu.json
-            //"./Entity/Cpu.json"
-            string storagePath = Path.Combine(_rootpath, classname);
-            
-            
-            if (!File.Exists(storagePath))
+
+            //////////////get entity name
+            var filename = typeof(T).Name + ".json"; // Cpu.json
+
+
+
+            // "./Entity/Cpu.json"
+            string storagePath = Path.Combine(_rootpath, filename);
+
+            if (!File.Exists(storagePath)) // EntityName.json not exists
             {
-                var jsonResult = JsonConvert.SerializeObject(Context, Formatting.Indented);
-                File.WriteAllText(storagePath, jsonResult);
+                var jsonResult = JsonConvert.SerializeObject(Context, Formatting.Indented); // convert data to json 
+                File.WriteAllText(storagePath, jsonResult); // save data 
             }
             else
             {
-                string content = File.ReadAllText(storagePath);
+                string content = File.ReadAllText(storagePath); // read data
+
                 if (!string.IsNullOrEmpty(content))
                 {
-                    var res = JsonConvert.DeserializeObject<List<T>>(content);
-                    res.AddRange(Context);
-                    var jsonResult = JsonConvert.SerializeObject(Context, Formatting.Indented);
-                    File.WriteAllText(storagePath, jsonResult);
-                }else
-                {
-                    var jsonResult = JsonConvert.SerializeObject(Context, Formatting.Indented);
-                    File.WriteAllText(storagePath, jsonResult);
+                    // we have data
+
+                    List<T> res = JsonConvert.DeserializeObject<List<T>>(content); // read alredy data
+                    res.AddRange(Context); // add new data to alredy data
+                    var jsonResult = JsonConvert.SerializeObject(res, Formatting.Indented); // convert all data to json 
+                    File.WriteAllText(storagePath, jsonResult); // save all data again 
                 }
+                else
+                {
+                    // we have not data
 
-                //FileStream fsOut = File.OpenWrite(storagePath);
-                //fsOut.Write(Encoding.UTF8.GetBytes("," + jsonResult), (int)fsOut.Length - 2, ("," + jsonResult).Length);
-                //fsOut.Close();
-            }   
+                    var jsonResult = JsonConvert.SerializeObject(Context, Formatting.Indented); // convert data to json 
+                    File.WriteAllText(storagePath, jsonResult); // save data 
+                }
+            }
+            Context.Clear();
         }
-
-        T IContext<T>.Create(T entity)
+        public T Create(T entity)
         {
-            var classname = entity.GetType().Name;
             Context.Add(entity);
             return null;
         }
-
-        T IContext<T>.Delete(T entity)
+        public T Delete(T entity)
         {
-            throw new NotImplementedException();
-        }
+            var classname = typeof(T).Name + ".json"; // Cpu.json
+            // "./Entity/Cpu.json"
+            string storagePath = Path.Combine(_rootpath, classname);
 
+            if (File.Exists(storagePath))
+            {
+                string content = File.ReadAllText(storagePath);
+
+                if (!string.IsNullOrEmpty(content))
+                {
+                    var res = JsonConvert.DeserializeObject<List<T>>(content);
+
+                    res.Remove(entity);
+
+                    var jsonResult = JsonConvert.SerializeObject(res, Formatting.Indented);
+                    File.WriteAllText(storagePath, jsonResult);
+                }
+            }
+            return null;
+        }
         public ICollection<T> GetAll()
         {
             var classname = typeof(T).Name + ".json"; // Cpu.json
-            //"./Entity/Cpu.json"
+            // "./Entity/Cpu.json"
             string storagePath = Path.Combine(_rootpath, classname);
 
             string content = File.ReadAllText(storagePath);
@@ -79,12 +99,31 @@ namespace _03_DAL.Persistance
                 var res = JsonConvert.DeserializeObject<ICollection<T>>(content);
                 return res;
             }
+
+            return null;
+        }
+        public T Update(T entity)
+        {
+            var classname = typeof(T).Name + ".json"; // Cpu.json
+            // "./Entity/Cpu.json"
+            string storagePath = Path.Combine(_rootpath, classname);
+
+            if (File.Exists(storagePath))
+            {
+                string content = File.ReadAllText(storagePath);
+
+                if (!string.IsNullOrEmpty(content))
+                {
+                    var res = JsonConvert.DeserializeObject<List<T>>(content);
+
+                    // Update
+
+                    var jsonResult = JsonConvert.SerializeObject(res, Formatting.Indented);
+                    File.WriteAllText(storagePath, jsonResult);
+                }
+            }
             return null;
         }
 
-        T IContext<T>.Update(T entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

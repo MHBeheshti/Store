@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CF2CBDCE-DFD4-4D09-A992-FB15D75C8A1B}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03_DAL</RootNamespace>
-    <AssemblyName>03-DAL</AssemblyName>
+    <ProjectGuid>{B7523971-74AC-41B6-9663-976A9C2C1425}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleUI</RootNamespace>
+    <AssemblyName>ConsoleUI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,24 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\Common\Audit.cs" />
-    <Compile Include="Entity\Hardware\BaseHardware.cs" />
-    <Compile Include="Entity\Hardware\Brand.cs" />
-    <Compile Include="Entity\Hardware\Cpu.cs" />
-    <Compile Include="Entity\Hardware\HardwarePhoto.cs" />
-    <Compile Include="Entity\Hardware\Off.cs" />
-    <Compile Include="Entity\Hardware\Ram.cs" />
-    <Compile Include="Entity\Identity\User.cs" />
-    <Compile Include="Entity\Main\Brand.cs" />
-    <Compile Include="Enums\PostStatus.cs" />
-    <Compile Include="Enums\MemoryType.cs" />
-    <Compile Include="Persistance\FileContext.cs" />
-    <Compile Include="Persistance\Interfaces\IContext.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IdGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\02-BLL\02-BLL.csproj">
+      <Project>{57bd0cd5-1fbe-485b-91f4-ad7a76037903}</Project>
+      <Name>02-BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\03-DAL\03-DAL.csproj">
+      <Project>{cf2cbdce-dfd4-4d09-a992-fb15d75c8a1b}</Project>
+      <Name>03-DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

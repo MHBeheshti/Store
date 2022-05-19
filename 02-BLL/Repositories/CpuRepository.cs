@@ -2,6 +2,7 @@
 using _02_BLL.IRepositories;
 using _03_DAL.Entity.Hardware;
 using _03_DAL.Persistance.Interfaces;
+using _03_DAL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,8 @@ namespace _02_BLL.Repositories
                 CoreNumber = CpuDto.CoreNumber,
                 Rate = CpuDto.Rate,
                 HardwareName = CpuDto.HardwareName,
-                Id = CpuDto.Id,
-                Count = CpuDto.Count,
+                Id = IdGenerator.Generate(),
+                //Count = CpuDto.Count,
                 Price = CpuDto.Price,
                 MemoryType = CpuDto.MemoryType,
                 Created = DateTime.UtcNow,
@@ -48,12 +49,12 @@ namespace _02_BLL.Repositories
             throw new NotImplementedException();
         }
 
-        List<CpuDto> ICpuRepository.GetAll()
+        public List<Cpu> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.GetAll().ToList();
         }
 
-        List<CpuDto> ICpuRepository.GetByCore(int corenumber)
+        public List<Cpu> GetByCore(int corenumber)
         {
             throw new NotImplementedException();
         }

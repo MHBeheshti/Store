@@ -13,7 +13,6 @@ namespace _02_BLL.Dto.Cpu
         public string HardwareName { get; set; }
         public decimal Price { get; set; }
         public ushort Rate { get; set; }
-        public int Count { get; set; }
         public int CoreNumber { get; set; }
         public MemoryType MemoryType { get; set; }
         public string Series { get; set; }

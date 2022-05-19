@@ -10,8 +10,8 @@ namespace _02_BLL.IRepositories
 {
     public interface ICpuRepository
     {
-        List<CpuDto> GetAll();
-        List<CpuDto> GetByCore(int corenumber);
+        List<Cpu> GetAll();
+        List<Cpu> GetByCore(int corenumber);
         CpuDto Create(CreateCpuDto Cpu);
         CpuDto Update(CreateCpuDto Cpu); 
         bool Delete(int Cpu);

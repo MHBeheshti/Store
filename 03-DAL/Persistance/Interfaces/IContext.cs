@@ -13,6 +13,5 @@ namespace _03_DAL.Persistance.Interfaces
         ICollection<T> GetAll();
         T Update(T entity);
         T Delete(T entity);
-
     }
 }

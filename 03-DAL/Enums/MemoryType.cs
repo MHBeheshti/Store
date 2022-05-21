@@ -11,6 +11,9 @@ namespace _03_DAL.Enums
             DDR2,
             DDR3,
             DDR4,
-            DDR5
+            DDR5,
+            GDDR4,
+            GDDR5,
+            GDDR6
         }
 }

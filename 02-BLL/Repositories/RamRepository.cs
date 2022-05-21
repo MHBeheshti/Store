@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _03_DAL.Entity.Hardware
+namespace _02_BLL.Repositories
 {
-    public class Off
+    public class RamRepository
     {
-        public int Id { get; set; }
-        public int Percent { get; set; }
     }
 }

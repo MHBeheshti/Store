@@ -51,7 +51,7 @@ namespace _03_DAL.Persistance
                 }
                 else
                 {
-                    // we have not data
+                    // we have no data
 
                     var jsonResult = JsonConvert.SerializeObject(Context, Formatting.Indented); // convert data to json 
                     File.WriteAllText(storagePath, jsonResult); // save data 

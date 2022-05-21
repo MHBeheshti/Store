@@ -8,5 +8,8 @@ namespace _03_DAL.Entity.Hardware
 {
     public class Brand
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        //public int Discription { get; set; }
     }
 }

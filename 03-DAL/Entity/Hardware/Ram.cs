@@ -10,10 +10,9 @@ namespace _03_DAL.Entity.Hardware
 {
     public class Ram : BaseHardware
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public int ModuleCount { get; set; }
         public MemoryType MemoryType { get; set; }
         public int Size { get; set; }
-            
     }
 }

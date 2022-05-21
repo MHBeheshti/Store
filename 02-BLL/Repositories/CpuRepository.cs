@@ -27,26 +27,32 @@ namespace _02_BLL.Repositories
                 Rate = CpuDto.Rate,
                 HardwareName = CpuDto.HardwareName,
                 Id = IdGenerator.Generate(),
+                Brand = CpuDto.Brand,
                 //Count = CpuDto.Count,
                 Price = CpuDto.Price,
                 MemoryType = CpuDto.MemoryType,
                 Created = DateTime.UtcNow,
                 Modify = DateTime.UtcNow
             };
-            var res = _context.Create(cpu);
-            _context.SaveChange();
 
-            CpuDto cpudto = new CpuDto();
-            /*
-             * mapping 
-            */
+
+            CpuDto cpudto = new CpuDto()
+            {
+                // 
+            };
+            _context.Create(cpu);
+            _context.SaveChange();
 
             return cpudto;
         }
 
-        bool ICpuRepository.Delete(int Cpu)
+        public bool Delete(int Id)
         {
-            throw new NotImplementedException();
+            var res = _context.GetAll().ToList().Find(x => x.Id == Id);
+            _context.Delete(res);
+            _context.SaveChange();
+
+            return true;
         }
 
         public List<Cpu> GetAll()

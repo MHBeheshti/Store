@@ -48,11 +48,12 @@
     <Compile Include="Entity\Hardware\BaseHardware.cs" />
     <Compile Include="Entity\Hardware\Brand.cs" />
     <Compile Include="Entity\Hardware\Cpu.cs" />
+    <Compile Include="Entity\Hardware\GraphicsCard.cs" />
     <Compile Include="Entity\Hardware\HardwarePhoto.cs" />
+    <Compile Include="Entity\Hardware\Motherboard.cs" />
     <Compile Include="Entity\Hardware\Off.cs" />
     <Compile Include="Entity\Hardware\Ram.cs" />
     <Compile Include="Entity\Identity\User.cs" />
-    <Compile Include="Entity\Main\Brand.cs" />
     <Compile Include="Enums\PostStatus.cs" />
     <Compile Include="Enums\MemoryType.cs" />
     <Compile Include="Persistance\FileContext.cs" />

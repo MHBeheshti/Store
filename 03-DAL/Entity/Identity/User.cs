@@ -17,7 +17,5 @@ namespace _03_DAL.Entity.Identity
         public string Adress { get; set; }
         public string HashPassWord { get; set; }
         public bool IsActive { get; set; } = true;
-
-
     }
 }

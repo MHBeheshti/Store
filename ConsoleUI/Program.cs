@@ -29,7 +29,7 @@ namespace ConsoleUI
             createCpuDto.MemoryType = (MemoryType)2;
             ICpuRepository cpuRepository = new CpuRepository(new FileContext<Cpu>("./"));
             cpuRepository.Create(createCpuDto);
-            cpuRepository.Delete(24);
+            //cpuRepository.Delete(24);
             var res = cpuRepository.GetAll();
 
             foreach (var item in res)

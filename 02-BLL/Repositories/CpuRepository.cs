@@ -41,6 +41,7 @@ namespace _02_BLL.Repositories
                 // 
             };
             _context.Create(cpu);
+            _context.Delete(cpu);
             _context.SaveChange();
 
             return cpudto;
@@ -62,7 +63,8 @@ namespace _02_BLL.Repositories
 
         public List<Cpu> GetByCore(int corenumber)
         {
-            throw new NotImplementedException();
+            var res = _context.GetAll().ToList().FindAll(x => x.CoreNumber == corenumber);
+            return res;
         }
 
         CpuDto ICpuRepository.Update(CreateCpuDto Cpu)

@@ -43,12 +43,20 @@
   <ItemGroup>
     <Compile Include="Dto\Cpu\CpuDto.cs" />
     <Compile Include="Dto\Cpu\CreateCpuDto.cs" />
+    <Compile Include="Dto\GraphicsCard\CreateGraphicsCardDto.cs" />
+    <Compile Include="Dto\GraphicsCard\GraphicsCardDto.cs" />
+    <Compile Include="Dto\Motherboard\CreateMotherboardDto.cs" />
+    <Compile Include="Dto\Motherboard\MotherboardDto.cs" />
     <Compile Include="Dto\Ram\CreateRamDto.cs" />
     <Compile Include="Dto\Ram\RamDto.cs" />
     <Compile Include="IRepositories\ICpuRepository.cs" />
+    <Compile Include="IRepositories\IGraphicsCardRepository.cs" />
+    <Compile Include="IRepositories\IMotherboardRepository.cs" />
     <Compile Include="IRepositories\IRamRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CpuRepository.cs" />
+    <Compile Include="Repositories\GraphicsCardRepository.cs" />
+    <Compile Include="Repositories\MotherboardRepository.cs" />
     <Compile Include="Repositories\RamRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿using _02_BLL.Dto.Ram;
+﻿using _02_BLL.Dto.GraphicsCard;
 using _02_BLL.IRepositories;
 using _03_DAL.Entity.Hardware;
 using System;
@@ -9,24 +9,24 @@ using System.Threading.Tasks;
 
 namespace _02_BLL.Repositories
 {
-    public class RamRepository : IRamRepository
+    public class GraphicsCardRepository : IGraphicsCardRepository
     {
-        RamDto IRamRepository.Create(CreateRamDto Ram)
+        GraphicsCardDto IGraphicsCardRepository.Create(CreateGraphicsCardDto GraphicsCard)
         {
             throw new NotImplementedException();
         }
 
-        bool IRamRepository.Delete(int Id)
+        bool IGraphicsCardRepository.Delete(int Id)
         {
             throw new NotImplementedException();
         }
 
-        List<Ram> IRamRepository.GetAll()
+        List<GraphicsCard> IGraphicsCardRepository.GetAll()
         {
             throw new NotImplementedException();
         }
 
-        RamDto IRamRepository.Update(CreateRamDto Ram)
+        GraphicsCardDto IGraphicsCardRepository.Update(CreateGraphicsCardDto GraphicsCard)
         {
             throw new NotImplementedException();
         }

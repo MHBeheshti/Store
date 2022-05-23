@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02_BLL.Dto.Ram
+namespace _02_BLL.Dto.GraphicsCard
 {
-    public class RamDto
+    public class GraphicsCardDto
     {
         public int Id { get; set; }
         public string HardwareName { get; set; }
@@ -16,9 +16,8 @@ namespace _02_BLL.Dto.Ram
         public decimal Price { get; set; }
         public ushort Rate { get; set; }
         public int Count { get; set; }
-        public string Series { get; set; }
-        public int ModuleCount { get; set; }
         public MemoryType MemoryType { get; set; }
-        public int Size { get; set; }
+        public string Series { get; set; }
+        public int HtmiPorts { get; set; }
     }
 }

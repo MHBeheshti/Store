@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _03_DAL.Entity.Hardware
 {
-    public class Motherboard
+    public class Motherboard : BaseHardware
     {
         public string Type { get; set; }
         public string RaidSupport { get; set; }

@@ -1,6 +1,8 @@
 ﻿using _02_BLL.Dto.GraphicsCard;
 using _02_BLL.IRepositories;
 using _03_DAL.Entity.Hardware;
+using _03_DAL.Persistance.Interfaces;
+using _03_DAL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +13,36 @@ namespace _02_BLL.Repositories
 {
     public class GraphicsCardRepository : IGraphicsCardRepository
     {
-        GraphicsCardDto IGraphicsCardRepository.Create(CreateGraphicsCardDto GraphicsCard)
+        private readonly IContext<GraphicsCard> _context;
+        GraphicsCardDto IGraphicsCardRepository.Create(CreateGraphicsCardDto GraphicsCardDto)
         {
-            throw new NotImplementedException();
+            GraphicsCard graphicscard = new GraphicsCard()
+            {
+                Id = IdGenerator.Generate(),
+                HardwareName = GraphicsCardDto.HardwareName,
+                Brand = GraphicsCardDto.Brand,
+                Price = GraphicsCardDto.Price,
+                Rate = GraphicsCardDto.Rate,
+                HtmiPorts = GraphicsCardDto.HtmiPorts,
+                MemoryType = GraphicsCardDto.MemoryType,
+                Created = DateTime.UtcNow,
+                Modify = DateTime.UtcNow
+            };
+            _context.Create(graphicscard);
+            _context.SaveChange();
+
+
+            GraphicsCardDto graphicscarddto = new GraphicsCardDto(); 
+            return graphicscarddto;
         }
 
-        bool IGraphicsCardRepository.Delete(int Id)
+        public bool Delete(int Id)
         {
-            throw new NotImplementedException();
+            var res = _context.GetAll().ToList().Find(x => x.Id == Id);
+            _context.Delete(res);
+            _context.SaveChange();
+
+            return true; 
         }
 
         List<GraphicsCard> IGraphicsCardRepository.GetAll()

@@ -41,7 +41,7 @@ namespace _02_BLL.Repositories
                 // 
             };
             _context.Create(cpu);
-            _context.Delete(cpu);
+            //_context.Delete(cpu);
             _context.SaveChange();
 
             return cpudto;

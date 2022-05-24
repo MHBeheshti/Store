@@ -1,5 +1,6 @@
 ﻿using _02_BLL;
 using _02_BLL.Dto.Cpu;
+using _02_BLL.Dto.GraphicsCard;
 using _02_BLL.IRepositories;
 using _02_BLL.Repositories;
 using _03_DAL.Entity.Hardware;
@@ -39,6 +40,8 @@ namespace ConsoleUI
                 Console.WriteLine($"HardwareName : {item.HardwareName}");
                 Console.WriteLine("------------------------");
             }
+            CreateGraphicsCardDto createGraphicsCardDto = new CreateGraphicsCardDto();
+            createGraphicsCardDto.HardwareName = "blah blah blah";
             Console.ReadLine();
         }
     }

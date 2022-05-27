@@ -34,7 +34,22 @@ namespace ConsoleUI
         
         static void Main(string[] args)
         {
-
+           /* DateTime date1 = new DateTime(1380, 05, 06);
+            IUserRepository userRepository = new UserRepository(new FileContext<User>("./"));
+            CreateUserDto createUserDto = new CreateUserDto();
+            createUserDto.FirstName = "Mohammad Hassan";
+            createUserDto.LastName = "Beheshti";
+            createUserDto.Username = "MHB";
+            createUserDto.BirthofDate = date1;
+            createUserDto.Email = "shahedmbeheshti110@gmail.com";
+            createUserDto.Adress = "Iran, Tehran, Narmak";
+            string Password = "1";
+            Password = GetHash(Password);
+            createUserDto.HashPassWord = Password;
+            createUserDto.phone = "012345678910";
+            createUserDto.Role = 0;
+            userRepository.Create(createUserDto);
+            */
             int a = 1;
             string s;
             User user = new User();
@@ -72,22 +87,38 @@ namespace ConsoleUI
             }
             while (true)
             {
-                if (user.Role == (Role)0)
+                if (user.Role == 0)// general manager 
+                {
+                    s = "Select the desired option : \n 1.Edit profile      2.Show product      3.Add/Delete Admin      4.Edit Product";
+                    Console.WriteLine(s);
+                    a = int.Parse(Console.ReadLine());
+                    GeneralManager generalManager = new GeneralManager();
+                    generalManager.GeneralManagerAccess(a);
+                }
+                else if (user.Role == (Role)1)// manager
                 {
                     //do somthing
                 }
-                else if (user.Role == (Role)1)
+                else if (user.Role == (Role)2)// normal user
                 {
-                    //do somthing
-                }
-                else if (user.Role == (Role)2)
-                {
-                    s = "Select the desired option : \n 1.Edit profile      2.Buy product";
-
+                    s = "Select the desired option : \n 1.Edit profile      2.Show product";
+                    Console.WriteLine(s);
+                    a = int.Parse(Console.ReadLine());
+                    if (a == 1) 
+                    {
+                        //do somthing
+                    }else if (a == 2) 
+                    {
+                        Console.WriteLine("Choose product : \n 1.CPU        2.RAM       3.Motherboard       4.GraphicsCard");
+                        a = int.Parse(Console.ReadLine());
+                        Product product = new Product();
+                        product.ShowProduct(a);
+                    }
+                    else
+                        Console.WriteLine("Wrong Input !!!");
                 }
                 else
-                    Console.WriteLine("wrong input !");
-
+                    Console.WriteLine("wrong input !!!");
             }
 
 

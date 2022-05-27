@@ -12,7 +12,7 @@ namespace _02_BLL.IRepositories
     {
         List<User> GetAll();
         UserDto Create(CreateUserDto User);
-        UserDto Update(CreateUserDto User);
+        User Update(CreateUserDto User);
         bool Delete(int user);
         User CheckUser(string Username, string Password);
     }

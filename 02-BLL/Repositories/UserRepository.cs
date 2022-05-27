@@ -56,7 +56,7 @@ namespace _02_BLL.Repositories
             return _context.GetAll().ToList();
         }
 
-        public UserDto Update(CreateUserDto User)
+        public User Update(CreateUserDto User)
         {
             throw new NotImplementedException();
         }

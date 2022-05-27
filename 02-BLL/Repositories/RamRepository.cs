@@ -14,6 +14,10 @@ namespace _02_BLL.Repositories
     public class RamRepository : IRamRepository
     {
         private readonly IContext<Ram> _context;
+        public RamRepository(IContext<Ram> context)
+        {
+            _context = context;
+        }
         RamDto IRamRepository.Create(CreateRamDto RamDto)
         {
             Ram ram = new Ram()

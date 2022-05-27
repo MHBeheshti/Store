@@ -14,6 +14,10 @@ namespace _02_BLL.Repositories
     public class MotherboardRepository : IMotherboardRepository
     {
         private readonly IContext<Motherboard> _context;
+        public MotherboardRepository(IContext<Motherboard> context)
+        {
+            _context = context;
+        }
         MotherboardDto IMotherboardRepository.Create(CreateMotherboardDto MotherboardDto)
         {
             Motherboard motherboard = new Motherboard()

@@ -14,6 +14,10 @@ namespace _02_BLL.Repositories
     public class GraphicsCardRepository : IGraphicsCardRepository
     {
         private readonly IContext<GraphicsCard> _context;
+        public GraphicsCardRepository(IContext<GraphicsCard> context)
+        {
+            _context = context;
+        }
         GraphicsCardDto IGraphicsCardRepository.Create(CreateGraphicsCardDto GraphicsCardDto)
         {
             GraphicsCard graphicscard = new GraphicsCard()

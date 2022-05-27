@@ -47,9 +47,9 @@ namespace _02_BLL.Repositories
             return true;
         }
 
-        List<Motherboard> IMotherboardRepository.GetAll()
+        public List<Motherboard> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.GetAll().ToList();
         }
 
         MotherboardDto IMotherboardRepository.Update(CreateMotherboardDto Motherboard)

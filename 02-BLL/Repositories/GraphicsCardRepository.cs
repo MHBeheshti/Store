@@ -45,9 +45,9 @@ namespace _02_BLL.Repositories
             return true; 
         }
 
-        List<GraphicsCard> IGraphicsCardRepository.GetAll()
+        public List<GraphicsCard> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.GetAll().ToList(); 
         }
 
         GraphicsCardDto IGraphicsCardRepository.Update(CreateGraphicsCardDto GraphicsCard)

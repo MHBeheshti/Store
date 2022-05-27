@@ -47,9 +47,9 @@ namespace _02_BLL.Repositories
             return true;
         }
 
-        List<Ram> IRamRepository.GetAll()
+        public List<Ram> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.GetAll().ToList();
         }
 
         RamDto IRamRepository.Update(CreateRamDto Ram)

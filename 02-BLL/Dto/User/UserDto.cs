@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _03_DAL.Entity.Identity
+namespace _02_BLL.Dto.User
 {
-    public class User
+    public class UserDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

@@ -49,15 +49,19 @@
     <Compile Include="Dto\Motherboard\MotherboardDto.cs" />
     <Compile Include="Dto\Ram\CreateRamDto.cs" />
     <Compile Include="Dto\Ram\RamDto.cs" />
+    <Compile Include="Dto\User\CreateUserDto.cs" />
+    <Compile Include="Dto\User\UserDto.cs" />
     <Compile Include="IRepositories\ICpuRepository.cs" />
     <Compile Include="IRepositories\IGraphicsCardRepository.cs" />
     <Compile Include="IRepositories\IMotherboardRepository.cs" />
     <Compile Include="IRepositories\IRamRepository.cs" />
+    <Compile Include="IRepositories\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CpuRepository.cs" />
     <Compile Include="Repositories\GraphicsCardRepository.cs" />
     <Compile Include="Repositories\MotherboardRepository.cs" />
     <Compile Include="Repositories\RamRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\03-DAL\03-DAL.csproj">

@@ -8,32 +8,149 @@
         mc:Ignorable="d"
         Title="ComputerStore" Height="450" Width="800">
     <Grid>
-        <Grid Name="SignInOrUp" >
+        <Grid Name="SignInOrUpGrid" Visibility="Collapsed" >
             <Grid.Background>
                 <ImageBrush ImageSource="C:\Users\MHB\source\repos\Store\01-UI\ImageSource\LoginBackgraund4.png" Stretch="Fill" />
             </Grid.Background>
             <Border Background="{StaticResource MaterialDesignLightBackground}" BorderBrush="{StaticResource MaterialDesignTextAreaBorder}" BorderThickness="2" CornerRadius="2" Margin="220,67,223,60" >
-                <Grid Name="LogIn" FlowDirection="LeftToRight">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="46*"/>
-                        <RowDefinition Height="93*"/>
-                        <RowDefinition Height="92*"/>
-                        <RowDefinition Height="48*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="4.5*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Sign In" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Grid.ColumnSpan="2" Height="32" Width="73"/>
-                    <TextBlock Text="UserName:" Grid.Row="1" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="29" />
-                    <TextBlock Text="Password:" Grid.Row="2" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="30" />
-                    <TextBox Name="UserNameTextBox" Grid.Column="1" Grid.Row="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,19,10,25"/>
-                    <TextBox Name="PasswordTextBox" Grid.Column="1" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,19,10,25"/>
-                    <Button Name="LogInBtn" Content="LogIn" Grid.Column="0" Grid.Row="3" Margin="8,8,8,5" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Background="#FF374C61" />
-                    <Button Name="SignUpBtn" Content="Create Account" Grid.Column="1" Grid.Row="3" Margin="8,8,8,5" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Background="#FF374C61" />
+                <Grid>
+                    <Grid Name="SignInGrid">
+                        <Grid Name="LogIn" FlowDirection="LeftToRight" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="46*"/>
+                                <RowDefinition Height="93*"/>
+                                <RowDefinition Height="92*"/>
+                                <RowDefinition Height="48*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="4.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Sign In" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Grid.ColumnSpan="2" Height="32" Width="73"/>
+                            <TextBlock Text="UserName:" Grid.Row="1" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="29" />
+                            <TextBlock Text="Password:" Grid.Row="2" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="30" />
+                            <TextBox Name="UsernameTextBox" Grid.Column="1" Grid.Row="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,19,10,25"/>
+                            <TextBox Name="passwordTextBox" Grid.Column="1" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10,19,10,25"/>
+                            <Button Name="SignUpBtn" Content="Create Account" Grid.Column="1" Grid.Row="3" Margin="10,8,10,5" Click="SignUpBtn_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Background="#FF374C61" />
+                            <Button Name="LogInBtn" Content="LogIn" Grid.Column="0" Grid.Row="3" Margin="10,8,10,5" Click="LogInBtn_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Background="#FF374C61" />
 
+                        </Grid>
+                    </Grid>
+                    <Grid Name="SignUpGrid">
+                        <Grid Name="SignUpFirstGrid" FlowDirection="LeftToRight" Visibility="Collapsed" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="4.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Sign Up" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Grid.ColumnSpan="2" Height="32" Width="83"/>
+                            <TextBlock Text="First Name:" Grid.Row="1" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="29" />
+                            <TextBlock Text="Last Name:" Grid.Row="2" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="30" />
+                            <TextBlock Text="Username:" Grid.Row="3" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="30" />
+                            <TextBlock Text="Password:" Grid.Row="4" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="30" />
+                            <TextBox Name="FirstNameTextBox" Grid.Column="1" Grid.Row="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Padding="5" FontSize="13"/>
+                            <TextBox Name="LastNameTextBox" Grid.Column="1" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Padding="5" FontSize="13"/>
+                            <TextBox Name="SignUpUsernameTextBox" Grid.Column="1" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Padding="5" FontSize="13"/>
+                            <TextBox Name="SignUpPasswordTextBox" Grid.Column="1" Grid.Row="4" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Padding="5" FontSize="13"/>
+                            <Button Name="NextBtn" Content="Next" Grid.ColumnSpan="2" Grid.Row="5" Margin="50,8,200,8" Click="NextBtn_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Background="#FF374C61" />
+                            <Button Name="BackBtn" Content="Back" Grid.ColumnSpan="2" Grid.Row="5" Margin="200,8,50,8" Click="BackBtn_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Background="#FF374C61" />
+
+                        </Grid>
+                        <Grid Name="SignUpSecondGrid" FlowDirection="LeftToRight" Visibility="Collapsed" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="4.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Sign Up" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Grid.ColumnSpan="2" Height="32" Width="83"/>
+                            <TextBlock Text="BirthDay:" Grid.Row="1" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="29" />
+                            <TextBlock Text="Email:" Grid.Row="2" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="29" />
+                            <TextBlock Text="Address:" Grid.Row="3" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="30" />
+                            <TextBlock Text="Phone:" Grid.Row="4" VerticalAlignment="Center" Margin="15,0,244,0" Style="{StaticResource MaterialDesignBody1TextBlock}" Grid.ColumnSpan="2" Height="30" />
+                            <TextBox Name="BirthDayTextBox" Grid.Column="1" Grid.Row="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Padding="5" FontSize="13"/>
+                            <TextBox Name="EmailTextBox" Grid.Column="1" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Padding="5" FontSize="13"/>
+                            <TextBox Name="AddressTextBox" Grid.Column="1" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Padding="5" FontSize="13"/>
+                            <TextBox Name="PhoneTextBox" Grid.Column="1" Grid.Row="4" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Padding="5" FontSize="13"/>
+                            <Button Name="CreateBtn" Content="Create" Grid.ColumnSpan="2" Grid.Row="5" Margin="50,8,200,8" Click="CreateBtn_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Background="#FF374C61" />
+                            <Button Name="BackToSignUpFirstGridBtn" Content="Back" Grid.ColumnSpan="2" Grid.Row="5" Margin="200,8,50,8" Click="BackToSignUpFirstGridBtn_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5" Background="#FF374C61" />
+
+                        </Grid>
+                    </Grid>
                 </Grid>
+
             </Border>
         </Grid>
+        <DockPanel Name="MainPanel">
+            <DockPanel DockPanel.Dock="Top" Background="{DynamicResource PrimaryHueDarkBrush}" >
+                <Menu DockPanel.Dock="Right" Width="50" Margin="5" FlowDirection="LeftToRight">
+                    <MenuItem Icon="{materialDesign:PackIcon Kind=Menu}" >
+                        <MenuItem Header="Profile" Icon="{materialDesign:PackIcon Kind=AccountEdit}"/>
+                        <MenuItem Header="Cart" Icon="{materialDesign:PackIcon Kind=Cart}"/>
+                        <Separator/>
+                        <MenuItem Header="Logout" Icon="{materialDesign:PackIcon Kind=Logout}"/>
+                    </MenuItem>
+
+                </Menu>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left" FlowDirection="LeftToRight" VerticalAlignment="Center" Margin="10,5">
+                    <materialDesign:PackIcon Kind="User" Width="25" Height="25"/>
+                    <TextBlock Text="Username" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                </StackPanel>
+            </DockPanel>
+            <Border DockPanel.Dock="Left" BorderThickness="2,0" BorderBrush="{StaticResource MaterialDesignToolForeground}" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="Product category" Style="{StaticResource MaterialDesignTextBlock}" FontSize="14"/>
+                    <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}" Width="200">
+                        <ComboBoxItem Content="GraphicsCard" IsSelected="True"/>
+                        <ComboBoxItem Content="RAM"/>
+                        <ComboBoxItem Content="CPU"/>
+                        <ComboBoxItem Content="Motherboard"/>
+                    </ComboBox>
+                    <Border Margin="-10 10" BorderThickness="1" Style="{StaticResource MaterialDesignToolBarMainPanelBorderStyle}"/>
+                    <TextBlock Text="Filters" FontSize="14" Style="{StaticResource MaterialDesignTextBlock}"/>
+                    <CheckBox Content="In Stock" Margin="10 5"/>
+                    <CheckBox Content="Discounted products" Margin="10 5"/>
+                    <Border Margin="-10 10" BorderThickness="1" Style="{StaticResource MaterialDesignToolBarMainPanelBorderStyle}"/>
+                    <Button Content="Search" Width="100" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Background="#FF1A53AE"/>
+                </StackPanel>
+            </Border>
+            <ScrollViewer>
+                <WrapPanel>
+                    <materialDesign:Card Width="200" Height="250" Margin="10" FlowDirection="LeftToRight">
+                        <StackPanel Margin="5">
+                            <Grid>
+                                <Image Source="C:\Users\MHB\source\repos\Store\01-UI\ImageSource\Cpu1.png" Height="129"/>
+                                <Border Width="30" Height="30">
+                                    <TextBlock Name="ProductDiscountTextBlock"/>
+                                </Border>
+                            </Grid>
+                            <Separator/>
+                            <TextBlock Name="ProductNameTextBlock" Text="Product Name" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                            <StackPanel>
+                                <Label Content="Rate :" Style="{StaticResource MaterialDesignLabel}"/>
+                                <materialDesign:RatingBar Name="ProductRatingBar" Value="3" Margin="0 0" IsReadOnly="True"/>
+                            </StackPanel>
+                            <TextBlock Name="ProductCostTextBlock" Text="Price" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignBody1TextBlock}" />
+                        </StackPanel>
+                    </materialDesign:Card>
+                </WrapPanel>
+            </ScrollViewer>
+
+        </DockPanel>
+
+
     </Grid>
 </Window>

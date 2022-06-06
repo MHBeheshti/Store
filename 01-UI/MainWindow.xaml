@@ -133,8 +133,8 @@
                         <StackPanel Margin="5">
                             <Grid>
                                 <Image Source="Images\Cpu1.png" Height="129"/>
-                                <Border Width="30" Height="30">
-                                    <TextBlock Name="ProductDiscountTextBlock"/>
+                                <Border Width="30" Height="30" Background="Red" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                    <TextBlock Name="ProductDiscountTextBlock" Text="10%" VerticalAlignment="Center" HorizontalAlignment="Center" />
                                 </Border>
                             </Grid>
                             <Separator/>

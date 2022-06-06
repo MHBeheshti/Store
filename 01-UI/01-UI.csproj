@@ -109,6 +109,13 @@
       <Name>02-BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cpu1.png" />
+    <Resource Include="Images\LoginBackgraund.png" />
+    <Resource Include="Images\LoginBackgraund2.png" />
+    <Resource Include="Images\LoginBackgraund3.png" />
+    <Resource Include="Images\LoginBackgraund4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

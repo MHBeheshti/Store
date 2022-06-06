@@ -10,7 +10,7 @@
     <Grid>
         <Grid Name="SignInOrUpGrid" Visibility="Collapsed" >
             <Grid.Background>
-                <ImageBrush ImageSource="C:\Users\MHB\source\repos\Store\01-UI\ImageSource\LoginBackgraund4.png" Stretch="Fill" />
+                <ImageBrush ImageSource="Images/LoginBackgraund4.png" Stretch="Fill" />
             </Grid.Background>
             <Border Background="{StaticResource MaterialDesignLightBackground}" BorderBrush="{StaticResource MaterialDesignTextAreaBorder}" BorderThickness="2" CornerRadius="2" Margin="220,67,223,60" >
                 <Grid>
@@ -132,7 +132,7 @@
                     <materialDesign:Card Width="200" Height="250" Margin="10" FlowDirection="LeftToRight">
                         <StackPanel Margin="5">
                             <Grid>
-                                <Image Source="C:\Users\MHB\source\repos\Store\01-UI\ImageSource\Cpu1.png" Height="129"/>
+                                <Image Source="Images\Cpu1.png" Height="129"/>
                                 <Border Width="30" Height="30">
                                     <TextBlock Name="ProductDiscountTextBlock"/>
                                 </Border>

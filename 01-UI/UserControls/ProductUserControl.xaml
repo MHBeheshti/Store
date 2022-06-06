@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="_01_UI.UserControls.ProductUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:_01_UI.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="270" d:DesignWidth="220">
+    <materialDesign:Card Width="200" Height="250" Margin="10" FlowDirection="LeftToRight">
+        <StackPanel Margin="5">
+            <Grid>
+                <Image Name="ProductImage" Source="/Images\Cpu1.png" Height="129"/>
+                <Border Width="30" Height="30" Background="Red" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5">
+                    <TextBlock Name="ProductDiscountTextBlock" Text="10%" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+            </Grid>
+            <Separator/>
+            <TextBlock Name="ProductNameTextBlock" Text="Product Name" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+            <StackPanel>
+                <Label Content="Rate :" Style="{StaticResource MaterialDesignLabel}"/>
+                <materialDesign:RatingBar Name="ProductRatingBar" Value="3" Margin="0 0" IsReadOnly="True"/>
+            </StackPanel>
+            <TextBlock Name="ProductCostTextBlock" Text="Price" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignBody1TextBlock}" />
+        </StackPanel>
+    </materialDesign:Card>
+
+
+</UserControl>

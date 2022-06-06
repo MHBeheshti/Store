@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _01_UI.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace _01_UI
         public MainWindow()
         {
             InitializeComponent();
+            AddProduct();
         }
 
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
@@ -67,9 +69,18 @@ namespace _01_UI
 
         private void LogInBtn_Click(object sender, RoutedEventArgs e)
         {
-
-
             // validation
+            SignInOrUpGrid.Visibility = Visibility.Collapsed;
+            MainPanel.Visibility = Visibility.Visible;
+        }
+        void AddProduct()
+        {
+            // read from file or database
+            for (int i = 0; i < 10; i++)
+            {
+                var Product = new ProductUserControl("CPU", i%5, "1000$", "20%");
+                ProductWrapPanel.Children.Add(Product);
+            }
         }
     }
 }

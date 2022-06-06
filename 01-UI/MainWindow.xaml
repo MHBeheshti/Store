@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="ComputerStore" Height="450" Width="800">
     <Grid>
-        <Grid Name="SignInOrUpGrid" Visibility="Collapsed" >
+        <Grid Name="SignInOrUpGrid"  >
             <Grid.Background>
                 <ImageBrush ImageSource="Images/LoginBackgraund4.png" Stretch="Fill" />
             </Grid.Background>
@@ -94,7 +94,7 @@
 
             </Border>
         </Grid>
-        <DockPanel Name="MainPanel">
+        <DockPanel Name="MainPanel" Visibility="Collapsed">
             <DockPanel DockPanel.Dock="Top" Background="{DynamicResource PrimaryHueDarkBrush}" >
                 <Menu DockPanel.Dock="Right" Width="50" Margin="5" FlowDirection="LeftToRight">
                     <MenuItem Icon="{materialDesign:PackIcon Kind=Menu}" >
@@ -114,9 +114,9 @@
                 <StackPanel>
                     <TextBlock Text="Product category" Style="{StaticResource MaterialDesignTextBlock}" FontSize="14"/>
                     <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}" Width="200">
-                        <ComboBoxItem Content="GraphicsCard" IsSelected="True"/>
+                        <ComboBoxItem Content="GraphicsCard" />
                         <ComboBoxItem Content="RAM"/>
-                        <ComboBoxItem Content="CPU"/>
+                        <ComboBoxItem Content="CPU" IsSelected="True"/>
                         <ComboBoxItem Content="Motherboard"/>
                     </ComboBox>
                     <Border Margin="-10 10" BorderThickness="1" Style="{StaticResource MaterialDesignToolBarMainPanelBorderStyle}"/>
@@ -128,24 +128,7 @@
                 </StackPanel>
             </Border>
             <ScrollViewer>
-                <WrapPanel>
-                    <materialDesign:Card Width="200" Height="250" Margin="10" FlowDirection="LeftToRight">
-                        <StackPanel Margin="5">
-                            <Grid>
-                                <Image Source="Images\Cpu1.png" Height="129"/>
-                                <Border Width="30" Height="30" Background="Red" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Left">
-                                    <TextBlock Name="ProductDiscountTextBlock" Text="10%" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                </Border>
-                            </Grid>
-                            <Separator/>
-                            <TextBlock Name="ProductNameTextBlock" Text="Product Name" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
-                            <StackPanel>
-                                <Label Content="Rate :" Style="{StaticResource MaterialDesignLabel}"/>
-                                <materialDesign:RatingBar Name="ProductRatingBar" Value="3" Margin="0 0" IsReadOnly="True"/>
-                            </StackPanel>
-                            <TextBlock Name="ProductCostTextBlock" Text="Price" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignBody1TextBlock}" />
-                        </StackPanel>
-                    </materialDesign:Card>
+                <WrapPanel Name="ProductWrapPanel" Margin="30 0 30 0">
                 </WrapPanel>
             </ScrollViewer>
 
